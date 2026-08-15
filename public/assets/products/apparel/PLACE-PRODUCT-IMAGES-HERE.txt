@@ -1,0 +1,1 @@
+Place apparel product photography here (e.g. jost-oversized-tee-01.webp). Filenames must match data/products.json.

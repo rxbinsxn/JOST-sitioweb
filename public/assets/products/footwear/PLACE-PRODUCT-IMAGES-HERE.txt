@@ -1,0 +1,1 @@
+Place footwear product photography here (e.g. jost-runner-01.webp). Filenames must match data/products.json.
