@@ -27,13 +27,13 @@ const filterConfig: Record<ProductCategory, { label: string; value: string | nul
 const heroCopy: Record<ProductCategory, { eyebrow: string; title: string; line: string }> = {
   footwear: {
     eyebrow: "Footwear",
-    title: "Built for the bold.",
-    line: "Premium silhouettes engineered for the street and beyond.",
+    title: "The best brands are here.",
+    line: "A curated edit of premium sneakers, sourced from names you already trust.",
   },
   apparel: {
     eyebrow: "Apparel",
-    title: "Defined by details.",
-    line: "Premium streetwear essentials, cut for a considered wardrobe.",
+    title: "Only the labels worth wearing.",
+    line: "Premium apparel from established brands, curated for a considered wardrobe.",
   },
 };
 
