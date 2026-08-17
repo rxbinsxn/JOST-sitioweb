@@ -21,6 +21,8 @@ export default function StaticPage({ eyebrow, title, paragraphs }: StaticPagePro
 }
 
 export function ShippingPage() {
+  const { minDays, maxDays, delayThresholdDays, delayCompensation } = storeConfig.shippingPolicy;
+
   return (
     <StaticPage
       eyebrow="Information"
@@ -28,7 +30,8 @@ export function ShippingPage() {
       paragraphs={[
         storeConfig.shippingNote,
         "All orders are placed and confirmed via WhatsApp. Once your order is confirmed, you will receive tracking details as soon as your package ships.",
-        `Currently shipping from ${storeConfig.country} to destinations across the European Union.`,
+        `Currently shipping from ${storeConfig.country} to destinations across the European Union. Estimated delivery time is ${minDays}–${maxDays} days from order confirmation.`,
+        `If your order has not arrived within ${delayThresholdDays} days of confirmation, contact us via WhatsApp — as an apology for the delay, you'll receive ${delayCompensation}.`,
       ]}
     />
   );
@@ -61,13 +64,16 @@ export function PrivacyPage() {
 }
 
 export function TermsPage() {
+  const { minDays, maxDays, delayThresholdDays, delayCompensation } = storeConfig.shippingPolicy;
+
   return (
     <StaticPage
       eyebrow="Legal"
       title="Terms & Conditions"
       paragraphs={[
         "By placing an order with JOST, you agree to provide accurate sizing, colour, and delivery information via WhatsApp.",
-        "Prices are listed in EUR and are subject to change without notice. Availability is confirmed at the time of order via WhatsApp.",
+        `Prices are listed in ${storeConfig.currency} (${storeConfig.currencySymbol}) and are subject to change without notice. Availability is confirmed at the time of order via WhatsApp.`,
+        `Estimated delivery is ${minDays}–${maxDays} days from order confirmation. If delivery takes longer than ${delayThresholdDays} days, JOST will compensate the customer with ${delayCompensation} as an apology for the delay — simply reach out via WhatsApp with your order details.`,
       ]}
     />
   );
