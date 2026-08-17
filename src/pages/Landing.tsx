@@ -16,7 +16,7 @@ export default function Landing() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <img src={logo} alt="JOST" className="h-10 w-auto opacity-95 md:h-12" />
+        <img src={logo} alt="JOST" className="h-14 w-auto opacity-95 sm:h-16 md:h-20" />
         <h1 className="mt-6 max-w-xs font-display text-2xl leading-snug text-warmWhite md:max-w-md md:text-3xl">
           ¿Qué le falta a tu estilo?
         </h1>
@@ -28,7 +28,7 @@ export default function Landing() {
 
       {/* Products: sneaker (horizontal) + garment (vertical), no cards */}
       <motion.div
-        className="relative z-10 mt-14 flex w-full max-w-3xl flex-col items-center gap-14 md:mt-20 md:flex-row md:items-end md:justify-center md:gap-24"
+        className="relative z-10 mt-14 flex w-full max-w-3xl flex-row items-end justify-center gap-8 sm:gap-14 md:mt-20 md:gap-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.2 }}
