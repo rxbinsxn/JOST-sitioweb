@@ -16,15 +16,22 @@ export default function About() {
           Made to be remembered.
         </h1>
         <p className="mt-8 text-sm leading-relaxed text-warmWhite/50">
-          JOST is a premium streetwear house built in Poland for a European audience
-          that values restraint over noise. Every piece is designed against a single
-          question: does this earn its place in a considered wardrobe. Obsidian black,
-          champagne detailing, and precise construction define the house — nothing more
-          than what belongs.
+          JOST is a premium streetwear curator based in Poland, serving a European
+          audience that values restraint over noise. We don't manufacture — we select.
+          Every product in our catalog is sourced directly from established, trusted
+          brands and chosen against a single question: does this earn its place in a
+          considered wardrobe.
         </p>
         <p className="mt-6 text-sm leading-relaxed text-warmWhite/50">
-          Footwear and apparel are developed as two disciplines under one identity,
+          Footwear and apparel are curated as two disciplines under one identity,
           shipped from Poland across the European Union.
+        </p>
+        <p className="mt-6 text-sm leading-relaxed text-warmWhite/50">
+          We deal only in the best quality the market has to offer — nothing less
+          earns a place in our catalog. That same standard carries through the
+          entire experience: attentive, considered, fast to respond, from your
+          first message to the moment your order arrives. It's what makes JOST
+          the best in Poland for premium streetwear.
         </p>
       </motion.div>
     </div>
