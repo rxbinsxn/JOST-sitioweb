@@ -6,35 +6,40 @@ import { FOOTWEAR_IMAGE, APPAREL_IMAGE } from "../config/heroImages";
 
 export default function Landing() {
   return (
-    <div className="relative flex min-h-[calc(100vh-0px)] flex-col items-center overflow-hidden px-6 pb-16 pt-12 md:pt-16">
+    <div className="relative flex min-h-[calc(100vh-0px)] flex-col items-center overflow-hidden px-6 pb-16 pt-10 md:pt-14">
       <div className="grain-overlay" />
 
-      {/* Hero: small logo + headline */}
+      {/* Hero: big logo + headline */}
       <motion.div
         className="relative z-10 flex flex-col items-center text-center"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <img src={logo} alt="JOST" className="h-14 w-auto opacity-95 sm:h-16 md:h-20" />
+        <img src={logo} alt="JOST" className="h-20 w-auto opacity-95 sm:h-24 md:h-28" />
         <h1 className="mt-6 max-w-xs font-display text-2xl leading-snug text-warmWhite md:max-w-md md:text-3xl">
-          ¿Qué le falta a tu estilo?
+          What's missing from your style?
         </h1>
-        <p className="mt-3 eyebrow text-[10px] text-champagne">Bienvenido a JOST</p>
+        <p className="mt-3 eyebrow text-[10px] text-champagne">Welcome to JOST</p>
         <p className="mt-2 max-w-xs text-xs text-warmWhite/40 md:max-w-sm">
-          Descubre nuestro catálogo y encuentra tu próximo estilo.
+          Discover our catalog and find your next look.
         </p>
       </motion.div>
 
-      {/* Products: sneaker (horizontal) + garment (vertical), no cards */}
+      {/* Products: identical footprint for both, so the row reads as perfectly
+          balanced and centered regardless of each photo's aspect ratio */}
       <motion.div
-        className="relative z-10 mt-14 flex w-full max-w-3xl flex-row items-end justify-center gap-8 sm:gap-14 md:mt-20 md:gap-24"
+        className="relative z-10 mt-12 grid w-full max-w-xs grid-cols-2 gap-6 sm:mt-16 sm:max-w-sm sm:gap-10 md:mt-20 md:max-w-xl md:gap-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.2 }}
       >
-        <WorldPanel category="footwear" image={FOOTWEAR_IMAGE} label="Zapatillas" to="/footwear" />
-        <WorldPanel category="apparel" image={APPAREL_IMAGE} label="Ropa" to="/apparel" />
+        <div className="flex justify-center">
+          <WorldPanel category="footwear" image={FOOTWEAR_IMAGE} label="Sneakers" to="/footwear" />
+        </div>
+        <div className="flex justify-center">
+          <WorldPanel category="apparel" image={APPAREL_IMAGE} label="Clothing" to="/apparel" />
+        </div>
       </motion.div>
 
       {/* Search — visual only for now, ready to wire to real search later */}
@@ -51,7 +56,7 @@ export default function Landing() {
           </svg>
           <input
             type="text"
-            placeholder="Buscar productos..."
+            placeholder="Search products..."
             className="w-full bg-transparent text-xs text-warmWhite placeholder:text-warmWhite/30 focus:outline-none"
           />
         </div>
@@ -76,7 +81,7 @@ export default function Landing() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="eyebrow text-[9px]">Novedades</span>
+          <span className="eyebrow text-[9px]">New Arrivals</span>
         </Link>
         <Link
           to="/footwear"
@@ -85,7 +90,7 @@ export default function Landing() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
             <path d="M4 17l4-8 4 5 3-4 5 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span className="eyebrow text-[9px]">Más vendidos</span>
+          <span className="eyebrow text-[9px]">Best Sellers</span>
         </Link>
         <Link
           to="/collections"
@@ -99,7 +104,7 @@ export default function Landing() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="eyebrow text-[9px]">Exclusivos</span>
+          <span className="eyebrow text-[9px]">Exclusives</span>
         </Link>
       </motion.div>
     </div>
