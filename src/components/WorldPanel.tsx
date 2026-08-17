@@ -38,10 +38,7 @@ export default function WorldPanel({ category, image, label, to }: WorldPanelPro
   const [hovered, setHovered] = useState(false);
   const [errored, setErrored] = useState(false);
 
-  const boxClass =
-    category === "footwear"
-      ? "w-32 sm:w-40 md:w-56"
-      : "h-32 sm:h-40 md:h-56 w-auto";
+  const boxClass = "h-32 w-32 sm:h-40 sm:w-40 md:h-56 md:w-56";
 
   const maskStyle: CSSProperties = {
     WebkitMaskImage: `url(${image})`,
@@ -66,7 +63,7 @@ export default function WorldPanel({ category, image, label, to }: WorldPanelPro
           <div
             className={`relative z-10 flex ${boxClass} aspect-square items-center justify-center border border-dashed border-champagne/20 px-4 text-center text-[10px] leading-relaxed text-warmWhite/30`}
           >
-            Añade tu foto real aquí
+            Add your real photo here
           </div>
         ) : (
           <div className={`relative ${boxClass}`}>
@@ -129,7 +126,7 @@ export default function WorldPanel({ category, image, label, to }: WorldPanelPro
         animate={{ opacity: hovered ? 1 : 0.35 }}
         transition={{ duration: 0.3 }}
       >
-        Ver catálogo →
+        View catalog →
       </motion.span>
     </Link>
   );
