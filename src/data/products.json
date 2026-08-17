@@ -6,14 +6,24 @@
     "category": "footwear",
     "subcategory": "sneakers",
     "description": "A premium everyday silhouette built on a low-profile sole with brushed metal eyelets and a tonal leather upper. Designed to move quietly between the street and the studio.",
-    "price": 89.9,
-    "currency": "EUR",
+    "price": 389.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/footwear/jost-runner-01.webp",
       "/assets/products/footwear/jost-runner-02.webp"
     ],
-    "colors": ["Black", "White"],
-    "sizes": ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"],
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "sizes": [
+      "EU 40",
+      "EU 41",
+      "EU 42",
+      "EU 43",
+      "EU 44",
+      "EU 45"
+    ],
     "stock": 10,
     "featured": true,
     "newArrival": true
@@ -25,14 +35,24 @@
     "category": "footwear",
     "subcategory": "sneakers",
     "description": "A high-top built for presence. Full-grain leather, reinforced ankle collar, and a champagne foil heel tab finish it with restraint.",
-    "price": 119.9,
-    "currency": "EUR",
+    "price": 519.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/footwear/jost-obsidian-hi-01.webp",
       "/assets/products/footwear/jost-obsidian-hi-02.webp"
     ],
-    "colors": ["Obsidian Black"],
-    "sizes": ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45", "EU 46"],
+    "colors": [
+      "Obsidian Black"
+    ],
+    "sizes": [
+      "EU 40",
+      "EU 41",
+      "EU 42",
+      "EU 43",
+      "EU 44",
+      "EU 45",
+      "EU 46"
+    ],
     "stock": 6,
     "featured": true,
     "newArrival": false
@@ -44,14 +64,24 @@
     "category": "footwear",
     "subcategory": "best-sellers",
     "description": "A single-tone trainer with a sculpted midsole and minimal branding. The house best seller, built for daily rotation.",
-    "price": 99.9,
-    "currency": "EUR",
+    "price": 429.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/footwear/jost-mono-trainer-01.webp",
       "/assets/products/footwear/jost-mono-trainer-02.webp"
     ],
-    "colors": ["Charcoal", "Warm White"],
-    "sizes": ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44"],
+    "colors": [
+      "Charcoal",
+      "Warm White"
+    ],
+    "sizes": [
+      "EU 39",
+      "EU 40",
+      "EU 41",
+      "EU 42",
+      "EU 43",
+      "EU 44"
+    ],
     "stock": 14,
     "featured": false,
     "newArrival": false
@@ -63,20 +93,44 @@
     "category": "apparel",
     "subcategory": "t-shirts",
     "description": "A heavyweight, 320gsm cotton essential with a dropped shoulder and a tonal embroidered crest at the chest.",
-    "price": 29.9,
-    "currency": "EUR",
+    "price": 129.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/apparel/jost-oversized-tee-01.webp",
       "/assets/products/apparel/jost-oversized-tee-02.webp"
     ],
-    "colors": ["Black", "White"],
-    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "sizeGuide": {
-      "XS": { "chest_cm": 52, "length_cm": 66 },
-      "S": { "chest_cm": 54, "length_cm": 68 },
-      "M": { "chest_cm": 56, "length_cm": 70 },
-      "L": { "chest_cm": 58, "length_cm": 72 },
-      "XL": { "chest_cm": 60, "length_cm": 74 }
+      "XS": {
+        "chest_cm": 52,
+        "length_cm": 66
+      },
+      "S": {
+        "chest_cm": 54,
+        "length_cm": 68
+      },
+      "M": {
+        "chest_cm": 56,
+        "length_cm": 70
+      },
+      "L": {
+        "chest_cm": 58,
+        "length_cm": 72
+      },
+      "XL": {
+        "chest_cm": 60,
+        "length_cm": 74
+      }
     },
     "stock": 20,
     "featured": true,
@@ -89,20 +143,44 @@
     "category": "apparel",
     "subcategory": "hoodies",
     "description": "Brushed-fleece hoodie with a champagne foil wordmark across the back and a relaxed, tailored fit.",
-    "price": 69.9,
-    "currency": "EUR",
+    "price": 299.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/apparel/jost-signature-hoodie-01.webp",
       "/assets/products/apparel/jost-signature-hoodie-02.webp"
     ],
-    "colors": ["Black", "Charcoal"],
-    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      "Black",
+      "Charcoal"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "sizeGuide": {
-      "XS": { "chest_cm": 56, "length_cm": 68 },
-      "S": { "chest_cm": 58, "length_cm": 70 },
-      "M": { "chest_cm": 60, "length_cm": 72 },
-      "L": { "chest_cm": 62, "length_cm": 74 },
-      "XL": { "chest_cm": 64, "length_cm": 76 }
+      "XS": {
+        "chest_cm": 56,
+        "length_cm": 68
+      },
+      "S": {
+        "chest_cm": 58,
+        "length_cm": 70
+      },
+      "M": {
+        "chest_cm": 60,
+        "length_cm": 72
+      },
+      "L": {
+        "chest_cm": 62,
+        "length_cm": 74
+      },
+      "XL": {
+        "chest_cm": 64,
+        "length_cm": 76
+      }
     },
     "stock": 15,
     "featured": true,
@@ -115,19 +193,38 @@
     "category": "apparel",
     "subcategory": "sweatshirts",
     "description": "A midweight crewneck sweatshirt with a ribbed hem and a single embroidered monogram at the cuff.",
-    "price": 59.9,
-    "currency": "EUR",
+    "price": 259.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/apparel/jost-noir-crewneck-01.webp",
       "/assets/products/apparel/jost-noir-crewneck-02.webp"
     ],
-    "colors": ["Black"],
-    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "sizeGuide": {
-      "S": { "chest_cm": 57, "length_cm": 67 },
-      "M": { "chest_cm": 59, "length_cm": 69 },
-      "L": { "chest_cm": 61, "length_cm": 71 },
-      "XL": { "chest_cm": 63, "length_cm": 73 }
+      "S": {
+        "chest_cm": 57,
+        "length_cm": 67
+      },
+      "M": {
+        "chest_cm": 59,
+        "length_cm": 69
+      },
+      "L": {
+        "chest_cm": 61,
+        "length_cm": 71
+      },
+      "XL": {
+        "chest_cm": 63,
+        "length_cm": 73
+      }
     },
     "stock": 12,
     "featured": false,
@@ -140,19 +237,38 @@
     "category": "apparel",
     "subcategory": "jackets",
     "description": "A structured shell jacket with a champagne hardware zip and a tonal quilted lining for transitional weather.",
-    "price": 149.9,
-    "currency": "EUR",
+    "price": 649.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/apparel/jost-utility-jacket-01.webp",
       "/assets/products/apparel/jost-utility-jacket-02.webp"
     ],
-    "colors": ["Obsidian Black"],
-    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      "Obsidian Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "sizeGuide": {
-      "S": { "chest_cm": 58, "length_cm": 70 },
-      "M": { "chest_cm": 60, "length_cm": 72 },
-      "L": { "chest_cm": 62, "length_cm": 74 },
-      "XL": { "chest_cm": 64, "length_cm": 76 }
+      "S": {
+        "chest_cm": 58,
+        "length_cm": 70
+      },
+      "M": {
+        "chest_cm": 60,
+        "length_cm": 72
+      },
+      "L": {
+        "chest_cm": 62,
+        "length_cm": 74
+      },
+      "XL": {
+        "chest_cm": 64,
+        "length_cm": 76
+      }
     },
     "stock": 8,
     "featured": true,
@@ -165,20 +281,44 @@
     "category": "apparel",
     "subcategory": "pants",
     "description": "A tapered, mid-weight trouser in brushed twill with a tonal drawcord waist and articulated knee.",
-    "price": 79.9,
-    "currency": "EUR",
+    "price": 339.9,
+    "currency": "PLN",
     "images": [
       "/assets/products/apparel/jost-tapered-pant-01.webp",
       "/assets/products/apparel/jost-tapered-pant-02.webp"
     ],
-    "colors": ["Black", "Charcoal"],
-    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      "Black",
+      "Charcoal"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "sizeGuide": {
-      "XS": { "chest_cm": 74, "length_cm": 100 },
-      "S": { "chest_cm": 78, "length_cm": 101 },
-      "M": { "chest_cm": 82, "length_cm": 102 },
-      "L": { "chest_cm": 86, "length_cm": 103 },
-      "XL": { "chest_cm": 90, "length_cm": 104 }
+      "XS": {
+        "chest_cm": 74,
+        "length_cm": 100
+      },
+      "S": {
+        "chest_cm": 78,
+        "length_cm": 101
+      },
+      "M": {
+        "chest_cm": 82,
+        "length_cm": 102
+      },
+      "L": {
+        "chest_cm": 86,
+        "length_cm": 103
+      },
+      "XL": {
+        "chest_cm": 90,
+        "length_cm": 104
+      }
     },
     "stock": 11,
     "featured": false,
