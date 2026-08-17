@@ -6,13 +6,19 @@
 export const storeConfig = {
   brandName: "JOST",
   tagline: "Premium Streetwear",
-  currency: "EUR",
-  currencySymbol: "€",
+  currency: "PLN",
+  currencySymbol: "zł",
   whatsappNumber: "YOUR_WHATSAPP_NUMBER_WITH_COUNTRY_CODE",
-  locale: "en-GB",
+  locale: "pl-PL",
   country: "Poland",
   shippingNote:
-    "Shipped from Poland to all EU destinations. Orders are processed within 1–2 business days.",
+    "Shipped from Poland to all EU destinations. Estimated delivery is 15–20 days from order confirmation.",
+  shippingPolicy: {
+    minDays: 15,
+    maxDays: 20,
+    delayThresholdDays: 25,
+    delayCompensation: "10% off your next order",
+  },
   social: {
     instagram: "https://instagram.com/jost",
     tiktok: "https://tiktok.com/@jost",
