@@ -16,7 +16,7 @@ export default function Landing() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <img src={logo} alt="JOST" className="h-20 w-auto opacity-95 sm:h-24 md:h-28" />
+        <img src={logo} alt="JOST" className="h-28 w-auto opacity-95 sm:h-32 md:h-36" />
         <h1 className="mt-6 max-w-xs font-display text-2xl leading-snug text-warmWhite md:max-w-md md:text-3xl">
           What's missing from your style?
         </h1>
