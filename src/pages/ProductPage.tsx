@@ -82,7 +82,7 @@ export default function ProductPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="eyebrow text-xs text-champagne">Premium Edition</span>
+          <span className="eyebrow text-xs text-champagne">Top Quality Edition</span>
           <h1 className="mt-3 font-display text-3xl text-warmWhite md:text-4xl">
             {product.name}
           </h1>
