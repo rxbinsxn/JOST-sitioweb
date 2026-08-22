@@ -4,9 +4,10 @@ import { formatPrice } from "../utils/formatPrice";
 import ProductImage from "./ProductImage";
 
 const badgeLabel: Record<ProductBadge, string> = {
-  premium: "Premium Selection",
-  bestseller: "Best Seller",
-  limited: "Limited",
+  premium: "TOP QUALITY",
+  bestseller: "BEST SELLER",
+  limited: "LIMITED",
+  justDropped: "JUST DROPPED",
 };
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -31,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
         {product.newArrival && (
           <span className="absolute left-3 top-3 eyebrow bg-obsidian/70 px-2 py-1 text-[9px] text-champagne backdrop-blur-sm">
-            New
+            NEW
           </span>
         )}
         {product.badge && (
@@ -45,7 +46,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <h3 className="text-sm text-warmWhite transition-colors group-hover:text-champagne">
             {product.name}
           </h3>
-          <p className="mt-1 eyebrow text-[9px] text-champagne/70">Premium Edition</p>
+          <p className="mt-1 eyebrow text-[9px] text-champagne/70">Top Quality Edition</p>
         </div>
         <span className="text-sm text-warmWhite/70">{formatPrice(product.price)}</span>
       </div>
