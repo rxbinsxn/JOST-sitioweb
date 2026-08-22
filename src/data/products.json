@@ -55,7 +55,8 @@
     ],
     "stock": 6,
     "featured": true,
-    "newArrival": false
+    "newArrival": false,
+    "badge": "premium"
   },
   {
     "id": "jost-mono-trainer-003",
@@ -84,7 +85,8 @@
     ],
     "stock": 14,
     "featured": false,
-    "newArrival": false
+    "newArrival": false,
+    "badge": "bestseller"
   },
   {
     "id": "jost-oversized-tee-001",
@@ -272,7 +274,8 @@
     },
     "stock": 8,
     "featured": true,
-    "newArrival": false
+    "newArrival": false,
+    "badge": "limited"
   },
   {
     "id": "jost-tapered-pant-005",
