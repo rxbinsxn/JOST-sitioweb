@@ -8,6 +8,10 @@ interface WorldPanelProps {
   image: string;
   label: string;
   to: string;
+  /** Optional short descriptive line shown under the label. */
+  line?: string;
+  /** Optional text for the small link at the bottom; defaults to "View catalog →". */
+  ctaLabel?: string;
 }
 
 /**
@@ -34,7 +38,14 @@ interface WorldPanelProps {
  *
  * Sized to sit side-by-side at every breakpoint, including mobile.
  */
-export default function WorldPanel({ category, image, label, to }: WorldPanelProps) {
+export default function WorldPanel({
+  category,
+  image,
+  label,
+  to,
+  line,
+  ctaLabel = "View catalog →",
+}: WorldPanelProps) {
   const [hovered, setHovered] = useState(false);
   const [errored, setErrored] = useState(false);
 
@@ -121,12 +132,13 @@ export default function WorldPanel({ category, image, label, to }: WorldPanelPro
       >
         {label}
       </span>
+      {line && <p className="mt-1 max-w-[10rem] text-[10px] text-warmWhite/40">{line}</p>}
       <motion.span
         className="mt-1 eyebrow text-[9px] text-champagne"
         animate={{ opacity: hovered ? 1 : 0.35 }}
         transition={{ duration: 0.3 }}
       >
-        View catalog →
+        {ctaLabel}
       </motion.span>
     </Link>
   );
