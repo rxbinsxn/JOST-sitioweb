@@ -4,6 +4,57 @@ import logo from "../assets/brand/JOST-logo.png";
 import WorldPanel from "../components/WorldPanel";
 import { FOOTWEAR_IMAGE, APPAREL_IMAGE } from "../config/heroImages";
 
+const whyJost = [
+  {
+    title: "Premium Selection",
+    line: "Every piece is carefully selected to match the JOST aesthetic.",
+    icon: (
+      <path
+        d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    title: "WhatsApp Orders",
+    line: "Choose your pair and place your order directly through WhatsApp.",
+    icon: (
+      <path
+        d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1.1z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    title: "Curated Style",
+    line: "Modern silhouettes selected for a clean, confident look.",
+    icon: (
+      <path
+        d="M12 3l1.8 5.6H19l-4.6 3.4 1.8 5.6-4.2-3.4-4.2 3.4 1.8-5.6L5 8.6h5.2z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    title: "Direct Support",
+    line: "Have a question? Our team is ready to assist you.",
+    icon: (
+      <path
+        d="M12 3v0a9 9 0 019 9v5a2 2 0 01-2 2h-1v-7a6 6 0 00-12 0v7H5a2 2 0 01-2-2v-5a9 9 0 019-9z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+];
+
 export default function Landing() {
   return (
     <div className="relative flex min-h-[calc(100vh-0px)] flex-col items-center overflow-hidden px-6 pb-16 pt-10 md:pt-14">
@@ -18,11 +69,20 @@ export default function Landing() {
       >
         <img src={logo} alt="JOST" className="h-28 w-auto opacity-95 sm:h-32 md:h-36" />
         <h1 className="mt-6 max-w-xs font-display text-2xl leading-snug text-warmWhite md:max-w-md md:text-3xl">
-          What's missing from your style?
+          Wear the Legacy.
         </h1>
-        <p className="mt-3 eyebrow text-[10px] text-champagne">Welcome to JOST</p>
-        <p className="mt-2 max-w-xs text-xs text-warmWhite/40 md:max-w-sm">
-          Discover our catalog and find your next look.
+        <p className="mt-3 max-w-xs text-xs text-warmWhite/40 md:max-w-sm">
+          Premium sneakers and streetwear. Choose your pair and order instantly
+          through WhatsApp.
+        </p>
+        <Link
+          to="/collections"
+          className="mt-6 border border-champagne px-8 py-3 eyebrow text-[11px] text-champagne transition-all hover:bg-champagne hover:text-obsidian"
+        >
+          Browse Collection
+        </Link>
+        <p className="mt-4 eyebrow text-[9px] text-warmWhite/30">
+          Premium selection • Fast replies • WhatsApp orders
         </p>
       </motion.div>
 
@@ -106,6 +166,30 @@ export default function Landing() {
           </svg>
           <span className="eyebrow text-[9px]">Exclusives</span>
         </Link>
+      </motion.div>
+
+      {/* Why JOST */}
+      <motion.div
+        className="relative z-10 mt-24 w-full max-w-3xl text-center md:mt-32"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h2 className="font-display text-2xl text-warmWhite md:text-3xl">
+          More than a look. It's a statement.
+        </h2>
+        <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
+          {whyJost.map((item) => (
+            <div key={item.title} className="flex flex-col items-center text-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-champagne">
+                {item.icon}
+              </svg>
+              <h3 className="mt-4 eyebrow text-[11px] text-warmWhite">{item.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-warmWhite/40">{item.line}</p>
+            </div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );
