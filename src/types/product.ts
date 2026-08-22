@@ -1,6 +1,6 @@
 export type ProductCategory = "footwear" | "apparel";
 
-export type ProductBadge = "premium" | "bestseller" | "limited";
+export type ProductBadge = "premium" | "bestseller" | "limited" | "justDropped";
 
 export interface SizeGuideRow {
   chest_cm?: number;
