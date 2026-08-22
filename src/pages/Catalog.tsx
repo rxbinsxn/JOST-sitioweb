@@ -28,7 +28,7 @@ const heroCopy: Record<ProductCategory, { eyebrow: string; title: string; line: 
   footwear: {
     eyebrow: "Footwear",
     title: "The best brands are here.",
-    line: "A curated edit of premium sneakers, sourced from names you already trust.",
+    line: "A curated selection of Top Quality sneakers, chosen especially for our customers.",
   },
   apparel: {
     eyebrow: "Apparel",
