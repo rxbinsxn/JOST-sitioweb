@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import logo from "../assets/brand/JOST-logo.png";
 import WorldPanel from "../components/WorldPanel";
 import { FOOTWEAR_IMAGE, APPAREL_IMAGE } from "../config/heroImages";
+import { buildGeneralWhatsappLink } from "../utils/whatsapp";
 
 const whyJost = [
   {
-    title: "Premium Selection",
+    title: "Top Quality Selection",
     line: "Every piece is carefully selected to match the JOST aesthetic.",
     icon: (
       <path
@@ -72,33 +73,56 @@ export default function Landing() {
           Wear the Legacy.
         </h1>
         <p className="mt-3 max-w-xs text-xs text-warmWhite/40 md:max-w-sm">
-          Premium sneakers and streetwear. Choose your pair and order instantly
-          through WhatsApp.
+          Top Quality sneakers and streetwear. Choose your pair and order
+          instantly through WhatsApp.
         </p>
-        <Link
-          to="/collections"
-          className="mt-6 border border-champagne px-8 py-3 eyebrow text-[11px] text-champagne transition-all hover:bg-champagne hover:text-obsidian"
-        >
-          Browse Collection
-        </Link>
         <p className="mt-4 eyebrow text-[9px] text-warmWhite/30">
-          Premium selection • Fast replies • WhatsApp orders
+          Top Quality • Fast replies • WhatsApp orders
+        </p>
+      </motion.div>
+
+      {/* Explore the Collection: small heading above the two category panels */}
+      <motion.div
+        className="relative z-10 mt-14 text-center md:mt-20"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h2 className="font-display text-xl text-warmWhite md:text-2xl">
+          Explore the Collection
+        </h2>
+        <p className="mt-2 max-w-xs text-xs text-warmWhite/40 md:max-w-sm">
+          Top Quality pieces selected for your everyday statement.
         </p>
       </motion.div>
 
       {/* Products: identical footprint for both, so the row reads as perfectly
           balanced and centered regardless of each photo's aspect ratio */}
       <motion.div
-        className="relative z-10 mt-12 grid w-full max-w-xs grid-cols-2 gap-6 sm:mt-16 sm:max-w-sm sm:gap-10 md:mt-20 md:max-w-xl md:gap-16"
+        className="relative z-10 mt-8 grid w-full max-w-xs grid-cols-2 gap-6 sm:mt-10 sm:max-w-sm sm:gap-10 md:mt-12 md:max-w-xl md:gap-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.9, delay: 0.2 }}
+        transition={{ duration: 0.9, delay: 0.25 }}
       >
         <div className="flex justify-center">
-          <WorldPanel category="footwear" image={FOOTWEAR_IMAGE} label="Sneakers" to="/footwear" />
+          <WorldPanel
+            category="footwear"
+            image={FOOTWEAR_IMAGE}
+            label="Sneakers"
+            line="Top Quality pairs selected for everyday wear."
+            ctaLabel="Explore Sneakers"
+            to="/footwear"
+          />
         </div>
         <div className="flex justify-center">
-          <WorldPanel category="apparel" image={APPAREL_IMAGE} label="Clothing" to="/apparel" />
+          <WorldPanel
+            category="apparel"
+            image={APPAREL_IMAGE}
+            label="Clothing"
+            line="Top Quality essentials with a clean silhouette."
+            ctaLabel="Explore Clothing"
+            to="/apparel"
+          />
         </div>
       </motion.div>
 
@@ -176,7 +200,8 @@ export default function Landing() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <h2 className="font-display text-2xl text-warmWhite md:text-3xl">
+        <span className="eyebrow text-xs text-champagne">Why JOST</span>
+        <h2 className="mt-3 font-display text-2xl text-warmWhite md:text-3xl">
           More than a look. It's a statement.
         </h2>
         <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
@@ -190,6 +215,28 @@ export default function Landing() {
             </div>
           ))}
         </div>
+      </motion.div>
+
+      {/* Final CTA */}
+      <motion.div
+        className="relative z-10 mt-24 w-full max-w-md text-center md:mt-32"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h2 className="font-display text-2xl text-warmWhite md:text-3xl">Find Your Pair.</h2>
+        <p className="mt-3 text-xs text-warmWhite/40">
+          Explore the Top Quality collection and find the piece that fits your style.
+        </p>
+        <a
+          href={buildGeneralWhatsappLink()}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-block border border-champagne px-8 py-3 eyebrow text-[11px] text-champagne transition-all hover:bg-champagne hover:text-obsidian"
+        >
+          Chat on WhatsApp
+        </a>
       </motion.div>
     </div>
   );
