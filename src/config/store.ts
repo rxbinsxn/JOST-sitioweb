@@ -5,7 +5,10 @@
 
 export const storeConfig = {
   brandName: "JOST",
-  tagline: "Premium Streetwear",
+  tagline: "Where style becomes legacy.",
+  // currencySymbol drives every displayed price across the site (see
+  // src/utils/formatPrice.ts) — change it here and the whole site updates.
+  // currency (ISO code) is kept for reference/data purposes only.
   currency: "PLN",
   currencySymbol: "zł",
   whatsappNumber: "YOUR_WHATSAPP_NUMBER_WITH_COUNTRY_CODE",
