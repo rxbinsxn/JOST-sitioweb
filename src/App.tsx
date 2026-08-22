@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import BagDrawer from "./components/BagDrawer";
 import Landing from "./pages/Landing";
 import Catalog from "./pages/Catalog";
 import ProductPage from "./pages/ProductPage";
@@ -41,7 +40,6 @@ export default function App() {
         </AnimatePresence>
       </main>
       {!isLanding && <Footer />}
-      <BagDrawer />
     </div>
   );
 }
