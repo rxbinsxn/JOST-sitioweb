@@ -1,5 +1,7 @@
 export type ProductCategory = "footwear" | "apparel";
 
+export type ProductBadge = "premium" | "bestseller" | "limited";
+
 export interface SizeGuideRow {
   chest_cm?: number;
   length_cm?: number;
@@ -21,4 +23,6 @@ export interface Product {
   stock: number;
   featured: boolean;
   newArrival: boolean;
+  /** Optional merchandising badge shown on the product card. */
+  badge?: ProductBadge;
 }
