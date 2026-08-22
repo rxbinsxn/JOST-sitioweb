@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useCart } from "../context/CartContext";
 import { storeConfig } from "../config/store";
 
 const navLinks = [
@@ -12,7 +11,6 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const { count, openBag } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -59,18 +57,6 @@ export default function Header() {
             aria-label="Search"
           >
             Search
-          </button>
-          <button
-            onClick={openBag}
-            className="eyebrow flex items-center gap-2 text-[11px] text-warmWhite/70 transition-colors hover:text-champagne"
-            aria-label="Open bag"
-          >
-            Bag
-            {count > 0 && (
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-champagne text-[10px] font-semibold text-obsidian">
-                {count}
-              </span>
-            )}
           </button>
           <button
             className="text-warmWhite/70 hover:text-champagne md:hidden"
