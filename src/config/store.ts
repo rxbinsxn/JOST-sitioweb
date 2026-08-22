@@ -11,7 +11,7 @@ export const storeConfig = {
   // currency (ISO code) is kept for reference/data purposes only.
   currency: "PLN",
   currencySymbol: "zł",
-  whatsappNumber: "YOUR_WHATSAPP_NUMBER_WITH_COUNTRY_CODE",
+  whatsappNumber: "‪+48798587602‬",
   locale: "pl-PL",
   country: "Poland",
   shippingNote:
