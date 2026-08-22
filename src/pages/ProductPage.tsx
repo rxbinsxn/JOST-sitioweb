@@ -3,32 +3,22 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import productsData from "../data/products.json";
 import type { Product } from "../types/product";
-import { storeConfig } from "../config/store";
-import { useCart } from "../context/CartContext";
-import { buildWhatsappLink } from "../utils/whatsapp";
+import { formatPrice } from "../utils/formatPrice";
+import { buildProductWhatsappLink } from "../utils/whatsapp";
 import ProductImage from "../components/ProductImage";
 import SizeGuideModal from "../components/SizeGuideModal";
 
 const products = productsData as Product[];
 
-function formatPrice(value: number, currency: string) {
-  return new Intl.NumberFormat(storeConfig.locale, {
-    style: "currency",
-    currency,
-    minimumFractionDigits: 2,
-  }).format(value);
-}
-
 export default function ProductPage() {
   const { slug } = useParams();
   const product = useMemo(() => products.find((p) => p.slug === slug), [slug]);
-  const { addItem } = useCart();
 
   const [activeImage, setActiveImage] = useState(0);
   const [color, setColor] = useState(product?.colors[0] ?? "");
-  const [size, setSize] = useState(product?.sizes[0] ?? "");
-  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState(""); // no size pre-selected — must be chosen explicitly
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
+  const [sizeError, setSizeError] = useState(false);
 
   if (!product) {
     return (
@@ -41,36 +31,15 @@ export default function ProductPage() {
     );
   }
 
-  const handleAddToBag = () => {
-    addItem(
-      {
-        productId: product.id,
-        slug: product.slug,
-        name: product.name,
-        image: product.images[0],
-        color,
-        size,
-        price: product.price,
-        currency: product.currency,
-      },
-      quantity
-    );
+  const handleOrderClick = () => {
+    if (!size) {
+      setSizeError(true);
+      return;
+    }
+    setSizeError(false);
+    const link = buildProductWhatsappLink(product.name, size, color || undefined);
+    window.open(link, "_blank", "noreferrer");
   };
-
-  const singleItemWhatsappLink = buildWhatsappLink([
-    {
-      key: "single",
-      productId: product.id,
-      slug: product.slug,
-      name: product.name,
-      image: product.images[0],
-      color,
-      size,
-      price: product.price,
-      currency: product.currency,
-      quantity,
-    },
-  ]);
 
   return (
     <div className="px-6 py-14 md:px-10 md:py-20">
@@ -113,39 +82,39 @@ export default function ProductPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="eyebrow text-xs text-champagne">{product.subcategory}</span>
+          <span className="eyebrow text-xs text-champagne">Premium Edition</span>
           <h1 className="mt-3 font-display text-3xl text-warmWhite md:text-4xl">
             {product.name}
           </h1>
-          <p className="mt-3 text-xl text-warmWhite/80">
-            {formatPrice(product.price, product.currency)}
-          </p>
+          <p className="mt-3 text-xl text-warmWhite/80">{formatPrice(product.price)}</p>
           <p className="mt-6 text-sm leading-relaxed text-warmWhite/50">
             {product.description}
           </p>
 
           <div className="hairline my-8" />
 
-          <div className="mb-6">
-            <div className="mb-3 eyebrow text-[11px] text-warmWhite/60">Color</div>
-            <div className="flex flex-wrap gap-2">
-              {product.colors.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setColor(c)}
-                  className={`border px-4 py-2 text-xs transition-colors ${
-                    color === c
-                      ? "border-champagne text-champagne"
-                      : "border-champagne/20 text-warmWhite/60 hover:border-champagne/50"
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
+          {product.colors.length > 0 && (
+            <div className="mb-6">
+              <div className="mb-3 eyebrow text-[11px] text-warmWhite/60">Color</div>
+              <div className="flex flex-wrap gap-2">
+                {product.colors.map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => setColor(c)}
+                    className={`border px-4 py-2 text-xs transition-colors ${
+                      color === c
+                        ? "border-champagne text-champagne"
+                        : "border-champagne/20 text-warmWhite/60 hover:border-champagne/50"
+                    }`}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="mb-6">
+          <div className="mb-8">
             <div className="mb-3 flex items-center justify-between">
               <span className="eyebrow text-[11px] text-warmWhite/60">
                 Size {product.category === "footwear" ? "(EU)" : ""}
@@ -161,7 +130,10 @@ export default function ProductPage() {
               {product.sizes.map((s) => (
                 <button
                   key={s}
-                  onClick={() => setSize(s)}
+                  onClick={() => {
+                    setSize(s);
+                    setSizeError(false);
+                  }}
                   className={`border px-4 py-2 text-xs transition-colors ${
                     size === s
                       ? "border-champagne text-champagne"
@@ -172,43 +144,17 @@ export default function ProductPage() {
                 </button>
               ))}
             </div>
+            {sizeError && (
+              <p className="mt-3 text-xs text-[#D98B94]">Please select a size.</p>
+            )}
           </div>
 
-          <div className="mb-8">
-            <div className="mb-3 eyebrow text-[11px] text-warmWhite/60">Quantity</div>
-            <div className="flex w-fit items-center border border-champagne/20">
-              <button
-                className="px-4 py-2 text-warmWhite/60 hover:text-champagne"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              >
-                −
-              </button>
-              <span className="w-10 text-center text-sm text-warmWhite">{quantity}</span>
-              <button
-                className="px-4 py-2 text-warmWhite/60 hover:text-champagne"
-                onClick={() => setQuantity((q) => q + 1)}
-              >
-                +
-              </button>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={handleAddToBag}
-              className="w-full border border-champagne bg-champagne py-4 eyebrow text-[11px] text-obsidian transition-all hover:bg-transparent hover:text-champagne"
-            >
-              Add to Bag
-            </button>
-            <a
-              href={singleItemWhatsappLink}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full border border-champagne/30 py-4 text-center eyebrow text-[11px] text-warmWhite/70 transition-all hover:border-champagne hover:text-champagne"
-            >
-              Order via WhatsApp
-            </a>
-          </div>
+          <button
+            onClick={handleOrderClick}
+            className="w-full border border-champagne bg-champagne py-4 eyebrow text-[11px] text-obsidian transition-all hover:bg-transparent hover:text-champagne"
+          >
+            Order on WhatsApp
+          </button>
         </motion.div>
       </div>
 
